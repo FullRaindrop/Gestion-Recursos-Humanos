@@ -1,7 +1,9 @@
 package utp.ac.pa.sistema;
 
+import utp.ac.pa.sistema.ui.MenuPrincipal;
+
 public class App {
-    public static void main(String[] args){
-        System.out.println("Sistema de Gestion de Recursos Humanos");
+    public static void main(String[] args) {
+        new MenuPrincipal().iniciar();
     }
 }
