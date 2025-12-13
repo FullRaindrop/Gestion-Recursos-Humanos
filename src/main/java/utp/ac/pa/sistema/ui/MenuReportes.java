@@ -16,8 +16,8 @@ public class MenuReportes {
             int op = io.leerEntero("Seleccione", 1, 3);
 
             switch (op) {
-                case 1 -> System.out.println("[DEMO] Reporte OK.");
-                case 2 -> System.out.println("[DEMO] PDF generado.");
+                case 1 -> System.out.println(" Reporte OK.");
+                case 2 -> System.out.println(" PDF generado.");
                 case 3 -> { return; }
             }
         }

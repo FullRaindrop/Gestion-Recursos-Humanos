@@ -8,7 +8,6 @@ public class Empleado {
     private Departamento departamento;
     private Puesto puesto;
     private Contrato contratoVigente;
-    private int id;
 
     public Empleado(String idEmpleado, String nombre, String email) {
         this.idEmpleado = idEmpleado;
@@ -43,9 +42,5 @@ public class Empleado {
     public void setPuesto(Puesto puesto) { this.puesto = puesto; }
     public Contrato getContratoVigente() { return contratoVigente; }
     public void setContratoVigente(Contrato contratoVigente) { this.contratoVigente = contratoVigente; }
-
-    public int getId() {
-        return id;
-    }
 
 }

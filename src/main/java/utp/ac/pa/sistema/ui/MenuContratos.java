@@ -28,10 +28,10 @@ public class MenuContratos {
         String id = io.leerString("ID contrato");
         io.leerFecha("Fecha inicio");
         io.leerDouble("Salario");
-        System.out.println("[DEMO] contrato creado.");
+        System.out.println(" contrato creado.");
     }
 
     private void nomina() {
-        System.out.println("[DEMO] nómina generada.");
+        System.out.println(" nómina generada.");
     }
 }

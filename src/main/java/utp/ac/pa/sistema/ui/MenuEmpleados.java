@@ -1,7 +1,5 @@
 package utp.ac.pa.sistema.ui;
 
-import java.util.ArrayList;
-import java.util.List;
 import utp.ac.pa.sistema.domain.Empleado;
 import utp.ac.pa.sistema.utils.IOUtils;
 
@@ -32,28 +30,12 @@ public class MenuEmpleados {
         String email = io.leerString("Email");
 
         Empleado e = new Empleado(id, nom, email);
-        System.out.println("Empleado creado: " + e.getNombre());
-        empleados.add(e);
-    }
 
-    private static List<Empleado> empleados = new ArrayList<>();
+        System.out.println("Empleado creado: " + e.getNombre());
+    }
 
     private void buscar() {
-    System.out.println("Buscar por ID: ");
-    int id = io.leerEntero("ID", 1, 9999);
-
-    for (Empleado e : empleados) {
-        if (e.getId() == id) {
-            System.out.println("Empleado encontrado:");
-            System.out.println("ID: " + e.getId());
-            System.out.println("Nombre: " + e.getNombre());
-            System.out.println("Email: " + e.getEmail());
-            System.out.println("Departamento: " + e.getDepartamento());
-            System.out.println("Rol: " + e.getPuesto());
-            return;
-        }
-    }
-
-    System.out.println("[ERROR] No existe un empleado con ese ID.");
+        String id = io.leerString("ID a buscar");
+        System.out.println("Empleado no implementado aún: " + id);
     }
 }

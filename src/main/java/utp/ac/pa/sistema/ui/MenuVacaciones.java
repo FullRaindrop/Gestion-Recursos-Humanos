@@ -16,8 +16,8 @@ public class MenuVacaciones {
             int op = io.leerEntero("Seleccione", 1, 3);
 
             switch (op) {
-                case 1 -> System.out.println("[DEMO] Solicitud creada.");
-                case 2 -> System.out.println("[DEMO] Ausencia registrada.");
+                case 1 -> System.out.println(" Solicitud creada.");
+                case 2 -> System.out.println(" Ausencia registrada.");
                 case 3 -> { return; }
             }
         }
