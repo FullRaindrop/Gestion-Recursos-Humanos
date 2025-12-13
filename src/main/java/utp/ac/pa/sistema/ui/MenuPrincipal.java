@@ -1,12 +1,22 @@
 package utp.ac.pa.sistema.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+import utp.ac.pa.sistema.domain.Contrato;
+import utp.ac.pa.sistema.domain.Empleado;
+import utp.ac.pa.sistema.domain.Nomina;
 import utp.ac.pa.sistema.utils.IOUtils;
 
 public class MenuPrincipal {
 
     IOUtils io = new IOUtils();
+    
+    private List<Empleado> empleados = new ArrayList<>();
+    private List<Nomina> nominas = new ArrayList<>();
+    private List<Contrato> contratos = new ArrayList<>();
 
     public void iniciar() {
+
 
         while (true) {
             System.out.println("\n======================");
@@ -22,11 +32,11 @@ public class MenuPrincipal {
             int op = io.leerEntero("Seleccione", 1, 6);
 
             switch (op) {
-                case 1 -> new MenuEmpleados().menu();
+                case 1 -> new MenuEmpleados(empleados).menu();
                 case 2 -> new MenuUsuarios().menu();
-                case 3 -> new MenuContratos().menu();
-                case 4 -> new MenuVacaciones().menu();
-                case 5 -> new MenuReportes().menu();
+                case 3 -> new MenuContratos(empleados, contratos, nominas).menu();
+                case 4 -> new MenuVacaciones(empleados).menu();
+                case 5 -> new MenuReportes(empleados).menu();
                 case 6 -> { System.out.println("Fin del sistema."); return; }
             }
         }

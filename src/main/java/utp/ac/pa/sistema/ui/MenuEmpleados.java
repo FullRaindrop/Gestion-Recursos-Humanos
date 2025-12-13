@@ -1,11 +1,19 @@
 package utp.ac.pa.sistema.ui;
 
+import java.util.ArrayList;
+import java.util.List;
 import utp.ac.pa.sistema.domain.Empleado;
 import utp.ac.pa.sistema.utils.IOUtils;
 
+
 public class MenuEmpleados {
 
+    private List<Empleado> empleados = new ArrayList<>();
     IOUtils io = new IOUtils();
+
+    public MenuEmpleados(List<Empleado> empleados) {
+        this.empleados = empleados;
+    }
 
     public void menu() {
         while (true) {
@@ -28,14 +36,32 @@ public class MenuEmpleados {
         String id = io.leerString("ID");
         String nom = io.leerString("Nombre");
         String email = io.leerString("Email");
+        String departamento = io.leerString("Departamento");
+        String puesto = io.leerString("Puesto");
 
         Empleado e = new Empleado(id, nom, email);
-
+        e.asignarDepartamento(departamento);
+        e.asignarPuesto(puesto);
+        empleados.add(e);
         System.out.println("Empleado creado: " + e.getNombre());
     }
 
     private void buscar() {
         String id = io.leerString("ID a buscar");
-        System.out.println("Empleado no implementado aún: " + id);
+
+        for (Empleado e : empleados) {
+            if (e.getIdEmpleado().equals(id)) {
+                System.out.println("Empleado encontrado:");
+                System.out.println("ID: " + e.getIdEmpleado());
+                System.out.println("Nombre: " + e.getNombre());
+                System.out.println("Email: " + e.getEmail());
+                System.out.println("Departamento: " + e.getDepartamento());
+                System.out.println("Puesto: " + e.getPuesto());
+                return;
+            }
+        }
+
+        System.out.println("Empleado NO encontrado");
     }
+
 }
